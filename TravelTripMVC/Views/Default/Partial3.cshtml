@@ -1,0 +1,26 @@
+﻿@using TravelTripMVC.Models.Entities
+@model List<Blog>
+
+<div class="grids">
+    <div class="box1">
+
+        <div class="padding1">
+            <h4>En Beğendiğimiz Yerler</h4>
+            <div class="box-left">
+                @foreach (var item in Model)
+                {
+                    <div class="bot-img">
+                        <img src="@item.BlogImage" alt="" />
+                    </div>
+                    <div class="bot-desc">
+                        <p>@item.Aciklama </p>
+                    </div>
+                    <div class="clear"></div>
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+</div>

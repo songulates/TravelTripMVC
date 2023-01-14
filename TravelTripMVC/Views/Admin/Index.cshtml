@@ -1,0 +1,31 @@
+﻿@using TravelTripMVC.Models.Entities
+@model List<Blog>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Listesi</h2>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Başlık</th>
+        <th>Detay</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Baslik</td>
+             <td><a href="/Admin/BlogDetay/" class="btn btn-default">Detaylar</a></td>
+            <td><a href="/Admin/BlogGuncelle/@item.ID" class="btn btn-warning">Güncelle</a></td>
+            <td><a href="/Admin/BlogSil/@item.ID" class="btn btn-danger">Sil</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/BlogEkle/" class="btn btn-primary">Blog Ekle</a>

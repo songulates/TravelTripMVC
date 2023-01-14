@@ -1,0 +1,23 @@
+﻿@using TravelTripMVC.Models.Entities
+@model List<Hakkimizda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Hakkımızda</h3>
+
+            @foreach (var item in Model)
+            {
+                <img align="top" src="@item.FotoUrl" />
+                <p>
+                    @item.Aciklama
+                </p>
+            }
+
+        </div>
+    </div>
+</div>
